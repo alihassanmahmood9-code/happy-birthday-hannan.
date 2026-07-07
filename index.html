@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Happy 18th Birthday Muhammad Hannan</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================= -->
+  <!-- CINEMATIC LOADING SCREEN -->
+  <!-- ============================================= -->
+  <div id="loader">
+    <div class="loader-inner">
+      <div class="loader-glow"></div>
+      <p class="loader-label">INITIALIZING BIRTHDAY PROTOCOL</p>
+      <div class="loader-bar-track">
+        <div class="loader-bar-fill" id="loaderBarFill"></div>
+      </div>
+      <p class="loader-percent" id="loaderPercent">0%</p>
+
+      <button id="enterBtn" class="enter-btn hidden">
+        <span>🎉 Enter Muhammad's Birthday 🎉</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- ============================================= -->
+  <!-- GLOBAL CANVASES (particles / fireworks / confetti) -->
+  <!-- ============================================= -->
+  <canvas id="particleCanvas"></canvas>
+  <canvas id="fireworkCanvas"></canvas>
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Floating balloons + hearts containers -->
+  <div id="balloonField"></div>
+  <div id="heartField"></div>
+
+  <!-- ============================================= -->
+  <!-- MAIN SITE CONTENT -->
+  <!-- ============================================= -->
+  <main id="site" class="hidden-site">
+
+    <!-- ---------- HERO SECTION ---------- -->
+    <section class="hero" id="hero">
+      <div class="hero-glow-bg"></div>
+      <div class="hero-content">
+        <p class="eyebrow">★ A LEGEND WAS BORN ★</p>
+        <h1 class="hero-title">
+          🎉 Happy 18th Birthday <span class="highlight">Muhammad Hannan</span> 🎉
+        </h1>
+        <p class="hero-subtitle">
+          <span id="typedText"></span><span class="cursor">|</span>
+        </p>
+        <a href="#surprise" class="scroll-cue">
+          <span>Scroll for the surprise</span>
+          <div class="scroll-arrow"></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- ---------- HANNAN SCAN SECTION ---------- -->
+    <section class="scan-section" id="scan">
+      <h2 class="section-title glow-text">SYSTEM DIAGNOSTIC</h2>
+      <p class="section-sub">Running full biometric &amp; personality scan...</p>
+
+      <div class="scan-terminal">
+        <p class="scan-line">&gt; Scanning Muhammad Hannan<span class="dots">...</span></p>
+
+        <div class="stat-row">
+          <span class="stat-label">Humor</span>
+          <div class="stat-bar"><div class="stat-fill" data-target="100" data-color="purple"></div></div>
+          <span class="stat-value" data-suffix="%">0</span>
+        </div>
+
+        <div class="stat-row">
+          <span class="stat-label">Loyalty</span>
+          <div class="stat-bar"><div class="stat-fill" data-target="100" data-color="blue"></div></div>
+          <span class="stat-value" data-suffix="%">0</span>
+        </div>
+
+        <div class="stat-row">
+          <span class="stat-label">Sleep Schedule</span>
+          <div class="stat-bar error"><div class="stat-fill error-fill"></div></div>
+          <span class="stat-value error-text">ERROR 404</span>
+        </div>
+
+        <div class="stat-row">
+          <span class="stat-label">Gaming Skills</span>
+          <div class="stat-bar"><div class="stat-fill" data-target="100" data-color="purple"></div></div>
+          <span class="stat-value" data-suffix="+">0</span>
+        </div>
+
+        <div class="stat-row">
+          <span class="stat-label">Handsomeness</span>
+          <div class="stat-bar"><div class="stat-fill infinite-fill" data-color="blue"></div></div>
+          <span class="stat-value">∞/10</span>
+        </div>
+
+        <p class="scan-line result-line">&gt; SCAN COMPLETE. RESULT: <span class="glow-text-blue">ONE OF A KIND LEGEND.</span></p>
+      </div>
+    </section>
+
+    <!-- ---------- BIRTHDAY CAKE SECTION ---------- -->
+    <section class="cake-section" id="cake-section">
+      <h2 class="section-title glow-text">MAKE A WISH</h2>
+      <p class="section-sub">Tap the cake to blow out the candles 🕯️</p>
+
+      <div class="cake-wrapper" id="cakeWrapper">
+        <div class="cake">
+          <div class="candle c1"><div class="flame"></div></div>
+          <div class="candle c2"><div class="flame"></div></div>
+          <div class="candle c3"><div class="flame"></div></div>
+          <div class="cake-top"></div>
+          <div class="cake-drip"></div>
+          <div class="cake-middle"></div>
+          <div class="cake-bottom"></div>
+          <div class="plate"></div>
+        </div>
+      </div>
+      <p class="cake-hint" id="cakeHint">Tap the cake!</p>
+    </section>
+
+    <!-- ---------- SURPRISE BUTTON SECTION ---------- -->
+    <section class="surprise-section" id="surprise">
+      <h2 class="section-title glow-text">ONE LAST THING...</h2>
+      <p class="section-sub">There's something waiting for you.</p>
+      <button id="surpriseBtn" class="surprise-btn">
+        <span class="surprise-btn-glow"></span>
+        <span class="surprise-btn-text">🎁 Open Your Surprise</span>
+      </button>
+    </section>
+
+    <!-- ---------- BIRTHDAY LETTER (hidden until revealed) ---------- -->
+    <section class="letter-section hidden-letter" id="letterSection">
+      <div class="glass-card letter-card">
+        <div class="letter-seal">💌</div>
+        <h2 class="section-title glow-text">To Muhammad Hannan</h2>
+        <div class="letter-body">
+          <p>Eighteen years ago, the world had no idea what kind of chaos and comedy it was about to receive. Today, that chaos becomes an official adult. Congratulations, I guess. They actually let you vote now.</p>
+          <p>But real talk — watching you grow up has been one of the best parts of my life. You've turned into someone genuinely funny, fiercely loyal, and kind in ways you don't even notice yourself being. The kind of person people are lucky to call family, and I'm lucky to call my cousin.</p>
+          <p>Eighteen is just the beginning. Bigger dreams, bigger dumb decisions, bigger everything. Whatever you chase next, I hope it's exactly what makes you happy — and I'll be right here, front row, laughing at you and cheering for you at the same time.</p>
+          <p class="letter-funny">P.S. Your sleep schedule is still legally classified as a crime scene, and no birthday wish is fixing that. Happy Birthday, legend. 🎂</p>
+        </div>
+        <p class="letter-signature">— Your Cousin, who loves you (and still remembers all your embarrassing moments) ❤️</p>
+      </div>
+    </section>
+
+    <!-- ---------- PHOTO GALLERY ---------- -->
+    <section class="gallery-section" id="gallery">
+      <h2 class="section-title glow-text">MEMORIES</h2>
+      <p class="section-sub">A few frames from the legend's story so far.</p>
+      <div class="gallery-grid" id="galleryGrid"></div>
+    </section>
+
+    <!-- ---------- FOOTER ---------- -->
+    <footer class="site-footer">
+      <p>Made with ❤️ by your cousin.</p>
+      <p class="footer-sub">Happy 18th Birthday, Muhammad Hannan.</p>
+    </footer>
+
+  </main>
+
+  <!-- ============================================= -->
+  <!-- MUSIC PLAYER (fixed) -->
+  <!-- ============================================= -->
+  <div class="music-player hidden-site" id="musicPlayer">
+    <audio id="bgMusic" src="music/song.mp3" loop preload="auto"></audio>
+
+    <button id="playPauseBtn" class="music-btn" title="Play / Pause">
+      <span id="playIcon">▶</span>
+    </button>
+
+    <div class="music-progress-wrap">
+      <input type="range" id="progressBar" class="progress-bar" value="0" min="0" max="100" step="0.1">
+    </div>
+
+    <button id="muteBtn" class="music-btn" title="Mute / Unmute">
+      <span id="muteIcon">🔊</span>
+    </button>
+
+    <input type="range" id="volumeBar" class="volume-bar" min="0" max="1" step="0.01" value="0.6" title="Volume">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
